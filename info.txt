@@ -1,0 +1,4 @@
+// 打包jar
+jar -cfv xxx.jar 文件夹名
+
+jar --create --file hello.jar --main-class com.itranswarp.sample.Main -C bin .

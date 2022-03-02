@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+    <div id="code"></div>
+    <button onclick="ubdateCode()">刷新</button>
+</body>
+<script>
+    function verificationCode (length) {
+        var codeStr = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM0123456789';
+        console.log(codeStr.length)
+        var reduceStr = '';
+        for (var i = 0; i < length; i++) {
+            var index = Math.floor(Math.random() * codeStr.length);
+            reduceStr += codeStr.charAt(index);
+        }
+        return reduceStr;
+    }
+    function ubdateCode(){
+        document.getElementById('code').innerHTML = verificationCode(6);
+    };
+    ubdateCode();
+</script>
+</html>
