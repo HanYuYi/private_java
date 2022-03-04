@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/helloAnnotation/helloAnnotation.iml" filepath="$PROJECT_DIR$/helloAnnotation/helloAnnotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloCollection/helloCollection.iml" filepath="$PROJECT_DIR$/helloCollection/helloCollection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloDate/helloDate.iml" filepath="$PROJECT_DIR$/helloDate/helloDate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloGeneric/helloGeneric.iml" filepath="$PROJECT_DIR$/helloGeneric/helloGeneric.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloIO/helloIO.iml" filepath="$PROJECT_DIR$/helloIO/helloIO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloJUnit/helloJUnit.iml" filepath="$PROJECT_DIR$/helloJUnit/helloJUnit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloModuleA/helloModuleA.iml" filepath="$PROJECT_DIR$/helloModuleA/helloModuleA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloModuleB/helloModuleB.iml" filepath="$PROJECT_DIR$/helloModuleB/helloModuleB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloModuleC/helloModuleC.iml" filepath="$PROJECT_DIR$/helloModuleC/helloModuleC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloReflection/helloReflection.iml" filepath="$PROJECT_DIR$/helloReflection/helloReflection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloRegExp/helloRegExp.iml" filepath="$PROJECT_DIR$/helloRegExp/helloRegExp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloSecurity/helloSecurity.iml" filepath="$PROJECT_DIR$/helloSecurity/helloSecurity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloThread/helloThread.iml" filepath="$PROJECT_DIR$/helloThread/helloThread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mxdx/mxdx.iml" filepath="$PROJECT_DIR$/mxdx/mxdx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/private_java.iml" filepath="$PROJECT_DIR$/.idea/private_java.iml" />
+    </modules>
+  </component>
+</project>
