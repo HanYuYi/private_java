@@ -41,12 +41,12 @@ public class Status02 {
         // thread1.setPriority(Thread.MAX_PRIORITY);
 
         // 强迫线程暂停
-         try {
-             Thread.sleep(1);
-         } catch (InterruptedException e) {}
+        try {
+            Thread.sleep(1);
+        } catch (InterruptedException e) {}
 
-         // 发出中断线程请求
-          thread1.interrupt();
+        // 发出中断线程请求
+        thread1.interrupt();
 
         // 等待thread1执行结束再向下执行，并且也能指定时间
         thread1.join();
