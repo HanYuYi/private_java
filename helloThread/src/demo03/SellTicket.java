@@ -18,27 +18,22 @@ public class SellTicket {
     }
 }
 
-class Locker {
-
-    public static final Object lockObj = new Object();
-
-    public static int ticket = 30;
-
-}
-
 class Realization implements Runnable {
-    public static volatile boolean running = true;
+
+    public int ticket = 30;
+
+    public volatile boolean running = true;
 
     @Override
     public void run() {
         while (running) {
-            if (Locker.ticket <= 1) {
-                running = false;
-                break;
-            }
-            synchronized(Locker.lockObj) {
-                System.out.println(Thread.currentThread().getName() + ": 还剩" + Locker.ticket + "张票");
-                Locker.ticket--;
+            synchronized(this) {
+                if (ticket < 0) {
+                    running = false;
+                    break;
+                }
+                System.out.println(Thread.currentThread().getName() + ": 还剩" + ticket + "张票");
+                ticket--;
             }
         }
     }

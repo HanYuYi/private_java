@@ -19,6 +19,7 @@ public class Main {
 
         // 第一种，第三种实例化方式，这种和上种差不多
         Thread thread3 = new Thread() {
+            @Override
             public void run() {
                 System.out.println("start new Thread 4");
             }
