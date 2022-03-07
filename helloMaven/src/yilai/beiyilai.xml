@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--声明项目-->
+    <groupId>com.HanYuYi.study</groupId>
+    <artifactId>private_java_maven</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!--依赖-->
+    <dependencies>
+        <!--在mvnrepository.com查找依赖，在这里声明-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.9</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
+
+
+<!--pom.xml有依赖性，a项目依赖b项目，b项目的所有依赖a都可以直接使用-->
+<!--如果a项目依赖b，同时还依赖其他，那么依赖选就近依赖，如果远近相同，则依赖先声明的依赖-->
+<!--
+    <dependency>
+        <groupId>com.HanYuYi.study</groupId>
+        <artifactId>private_java_maven</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+-->
+<!--如果a项目依赖b，a想排除其他依赖，可以在声明依赖下面追加标签exclusions-->
+<!--
+    <exclusions>
+        <exclusion>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+        </exclusion>
+    <exclusions>
+-->
+<!--依赖范围（指定在什么情况下生效），在依赖下面追加标签<scope>-->
+<!--<scope>compile</scope>-->
+<!--
+    compile：在编译和运行是都有效（默认）
+    provided：打包时忽略此依赖
+    runtime：只在运行时有效，例如JDBC驱动
+    system：声明此依赖是一个在本地的依赖， 并在追加<systemPath>XXX<systemPath>标签，协商路径
+    test：只在测试时有效
+    import：
+    用<dependencyManagement>包裹<dependencies>，在<properties>自定义标签，并声明值，就可以在<dependencies>的子级使用变量了：${XXX},
+    并且在子工程用<parent>标签包裹对父工程的依赖声明：
+    <parent>
+        <groupId>com.HanYuYi.study</groupId>
+        <artifactId>private_java_maven</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>父工程pom.xml</relativePath>
+    </parent>
+    并且声明<scope>import</scope>，就相当于控制了子工程的版本，所以子工程只定义：
+    <dependency>
+        <groupId>com.HanYuYi.study</groupId>
+        <artifactId>private_java_maven</artifactId>
+    </dependency>
+    即可，省去了<version>
+-->
+
+
+<!--插件-->
+<!--
+    <build>
+        <plugins>
+        编译器插件
+            <plugin>
+                坐标
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>3.6.0</version>
+                配置
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+            tomcat插件
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8888</port>
+                    <path>/</path>
+                </configuration>
+            </plugin>
+        </plugins>
+
+        资源配置插件
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+
+    </build>
+
+
+-->
+

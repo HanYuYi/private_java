@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.pom</groupId>
+    <artifactId>parent_pro</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>child_pro</module>
+    </modules>
+
+    <!--声明pom聚合项目，就是一个逻辑项目，只负责管理jar包的版本 -->
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!--声明版本-->
+        <mybatis.version>3.5.9</mybatis.version>
+        <spring.core.version>5.3.7</spring.core.version>
+    </properties>
+
+    <!--使用版本-->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.core.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
