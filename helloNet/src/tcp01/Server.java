@@ -17,7 +17,7 @@ public class Server {
             ServerSocket serverSocket = new ServerSocket(6666);
             // 获取客户端socket对象
             Socket socket = serverSocket.accept();
-            // 获取客户端输入流
+            // 获取网络输入流
             InputStream inputStream = socket.getInputStream();
             // 读取客户端输入流的数据
             byte[] bytes = new byte[1024];
