@@ -20,6 +20,7 @@ class HelloThread extends Thread {
         int n = 0;
         while (isRunning) {
             System.out.println("hello " + n);
+            n++;
         }
         System.out.println("hello end");
     }

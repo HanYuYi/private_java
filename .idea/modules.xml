@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/helloModuleA/helloModuleA.iml" filepath="$PROJECT_DIR$/helloModuleA/helloModuleA.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloModuleB/helloModuleB.iml" filepath="$PROJECT_DIR$/helloModuleB/helloModuleB.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloModuleC/helloModuleC.iml" filepath="$PROJECT_DIR$/helloModuleC/helloModuleC.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloNet/helloNet.iml" filepath="$PROJECT_DIR$/helloNet/helloNet.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloReflection/helloReflection.iml" filepath="$PROJECT_DIR$/helloReflection/helloReflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloRegExp/helloRegExp.iml" filepath="$PROJECT_DIR$/helloRegExp/helloRegExp.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloSecurity/helloSecurity.iml" filepath="$PROJECT_DIR$/helloSecurity/helloSecurity.iml" />
