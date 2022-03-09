@@ -19,6 +19,7 @@
       <module fileurl="file://$PROJECT_DIR$/helloThread/helloThread.iml" filepath="$PROJECT_DIR$/helloThread/helloThread.iml" />
       <module fileurl="file://$PROJECT_DIR$/mxdx/mxdx.iml" filepath="$PROJECT_DIR$/mxdx/mxdx.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/private_java.iml" filepath="$PROJECT_DIR$/.idea/private_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xmlAndJson/xmlAndJson.iml" filepath="$PROJECT_DIR$/xmlAndJson/xmlAndJson.iml" />
     </modules>
   </component>
 </project>

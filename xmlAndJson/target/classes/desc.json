@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "name": "北京欢迎你！",
+  "author": {
+    "firstName": "Han",
+    "lastName": "YuYi"
+  },
+  "isbn": "1234567",
+  "tags": ["Java", "Network"],
+  "date": "2022-03-09",
+  "bigNum": "1-3-432-8210"
+}
