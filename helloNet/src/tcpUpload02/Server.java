@@ -5,13 +5,11 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.util.Random;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 /**
  * 多线程上传文件(一个文件开一个线程)
  */
-class Uploader implements Runnable {
+class Uploader {
     // 上传文件的个数
     public static int fileCount = 0;
     private final String OS_SEPARATOR = File.separator;
@@ -38,43 +36,41 @@ class Uploader implements Runnable {
      * 读取客户端数据，写到硬盘，并返回给客户端响应
      * @throws IOException
      */
-    private void handle() throws IOException {
+    public void handle() throws IOException {
         ServerSocket serverSocket = new ServerSocket(6666);
         while (true) {
             Socket socket = serverSocket.accept();
-            InputStream inputStream = socket.getInputStream();
-            int len = 0;
-            byte[] bytes = new byte[1024];
-            mkDirectory();
-            FileOutputStream fileOutputStream = new FileOutputStream("."+OS_SEPARATOR+"IODirectory"+OS_SEPARATOR+fileName());
-            while ((len = inputStream.read(bytes)) != -1) {
-                fileOutputStream.write(bytes, 0 , len);
-            }
-            Uploader.fileCount++;
-            System.out.println("文件写入到硬盘了...："+Uploader.fileCount);
-            OutputStream outputStream = socket.getOutputStream();
-            outputStream.write("数据上传成功！".getBytes(StandardCharsets.UTF_8));
-            inputStream.close();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        InputStream inputStream = socket.getInputStream();
+                        int len = 0;
+                        byte[] bytes = new byte[1024];
+                        mkDirectory();
+                        FileOutputStream fileOutputStream = new FileOutputStream("."+OS_SEPARATOR+"IODirectory"+OS_SEPARATOR+fileName());
+                        while ((len = inputStream.read(bytes)) != -1) {
+                            fileOutputStream.write(bytes, 0 , len);
+                        }
+                        Uploader.fileCount++;
+                        System.out.println("文件写入到硬盘了...："+Uploader.fileCount);
+                        OutputStream outputStream = socket.getOutputStream();
+                        outputStream.write("数据上传成功！".getBytes(StandardCharsets.UTF_8));
+                        inputStream.close();
+                    } catch (IOException e) {
+                        System.out.println(e);
+                    }
+                }
+            }).start();
             // fileOutputStream.close();
             // socket.close();
-            // serverSocket.close();
-        }
-    }
-
-    @Override
-    public void run() {
-        try {
-            handle();
-        } catch (IOException e) {
-            System.out.println(e);
+            // socket.close();
         }
     }
 }
 
 public class Server {
-    public static void main(String[] args) {
-        ExecutorService executorService = Executors.newCachedThreadPool();
-        Uploader uploader = new Uploader();
-        executorService.submit(uploader);
+    public static void main(String[] args) throws IOException {
+        new Uploader().handle();
     }
 }
