@@ -16,6 +16,7 @@
       <module fileurl="file://$PROJECT_DIR$/helloReflection/helloReflection.iml" filepath="$PROJECT_DIR$/helloReflection/helloReflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloRegExp/helloRegExp.iml" filepath="$PROJECT_DIR$/helloRegExp/helloRegExp.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloSecurity/helloSecurity.iml" filepath="$PROJECT_DIR$/helloSecurity/helloSecurity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloSql/helloSql.iml" filepath="$PROJECT_DIR$/helloSql/helloSql.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloThread/helloThread.iml" filepath="$PROJECT_DIR$/helloThread/helloThread.iml" />
       <module fileurl="file://$PROJECT_DIR$/mxdx/mxdx.iml" filepath="$PROJECT_DIR$/mxdx/mxdx.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/private_java.iml" filepath="$PROJECT_DIR$/.idea/private_java.iml" />
