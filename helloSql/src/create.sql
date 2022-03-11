@@ -14,5 +14,9 @@ CREATE TABLE <表名> (
     PRIMARY KEY (<字段名称>)
 ) ENGINE=InnoDB DEFAULT CHARACTER=utf8;
 
---插入数据
-INSERT INTO <表名>(<字段1>, <字段2>) VALUES (<字段1的值>, <字段2的值>);
+---创建登录用户（要先创建数据库）
+CREATE USER IF NOT EXISTS <用户名>@'%' IDENTIFIED BY '<口令>';
+---用户授权
+GRANT ALL PRIVILEGES ON <数据库名>.* TO <用户名>@'%' WITH GRANT OPTION;
+---刷新权限
+FLUSH PRIVILEGES;

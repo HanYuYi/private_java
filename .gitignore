@@ -26,3 +26,4 @@ hs_err_pid*
 /IODirectory/
 .DS_Store
 /xmlAndJson/target/
+/helloJDBC/target/

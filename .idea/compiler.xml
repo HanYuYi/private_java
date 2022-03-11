@@ -7,9 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="xmlAndJson" />
+        <module name="helloJDBC" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="helloJDBC" target="1.7" />
+      <module name="test" target="1.7" />
       <module name="xmlAndJson" target="8" />
     </bytecodeTargetLevel>
   </component>
