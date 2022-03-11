@@ -1,14 +1,18 @@
----查询
+---查询表字段
+SHOW FULL COLUMNS FROM <表名>;
+--查询表字段
+DESC <表名>;
+--查看创建表的SQL语句
+SHOW CREATE TABLE <表名>;
+
+---查询表数据
 SELECT * FROM <表名> WHERE <表达式>;
-
----and
+--条件查询 and
 SELECT * FROM <表名> WHERE <表达式1> AND <表达式2>;
-
----or
+--条件查询 or
 SELECT * FROM <表名> WHERE <表达式1> OR <表达式2>;
-
----not
---<> 代表不等于
+--条件查询 not
+--条件查询 <> 代表不等于
 SELECT * FROM <表名> WHERE NOT <表达式>;
 SELECT * FROM <表名> WHERE <字段 <> 值>;
 
@@ -65,11 +69,27 @@ SELECT <表名1的别名.字段1> <别名>, <表名1的别名.字段2> <别名>,
     WHERE <表名1的别名.字段> = XXX;
 
 ---连接查询
+--INNER JOIN 内连接
 SELECT <表名1的别名.字段1> <别名>, <表名2的别名.字段1> <别名>
     FROM <表名1> <表名1的别名>
     INNER JOIN <表名2> <表名2的别名>
     ON <表名2的别名.字段> = <表名1的别名.字段>
     WHERE <表达式>;
+--RIGHT OUTER JOIN 会查询到表2为null的数据
+SELECT <表名1的别名.字段>, <表名2的别名.字段>
+    FROM <表名1> <表名1的别名>
+    RIGHT OUTER JOIN <表名2> <表名2的别名>
+    ON <表达式>;
+--LEFT OUTER JOIN 会查询到表1为null的数据
+SELECT <表名1的别名.字段>, <表名2的别名.字段>
+    FROM <表名1> <表名1的别名>
+    LEFT OUTER JOIN <表名2> <表名2的别名>
+    ON <表达式>;
+--FULL OUTER JOIN 会查询到表1和表2为null的数据
+SELECT <表名1的别名.字段>, <表名2的别名.字段>
+    FROM <表名1> <表名1的别名>
+    FULL OUTER JOIN <表名2> <表名2的别名>
+    ON <表达式>;
 
 ---多个条件组合
 SELECT <字段1> <别名1>, <字段2> <别名2> FROM <表名>
