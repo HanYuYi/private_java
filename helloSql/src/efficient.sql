@@ -28,6 +28,12 @@ COMMIT;
 --回滚事务
 --将 COMMIT 改为 ROLLBACK
 
+--查看事务状态
+SELECT @@AUTOCOMMIT;
+--mysql 默认是开启事务的
+--关闭事务的默认提交
+SET AUTOCOMMIT=0;
+
 ----事务的并发隔离（两个或两个以上的终端在操作同一个表）
 ---有四种隔离级别
 --Read Uncommitted 隔离级别最低，事务A会读到另事务B更新后但未提交的数据，如果事务B回滚，事务A读到的数据就是脏数据，脏读

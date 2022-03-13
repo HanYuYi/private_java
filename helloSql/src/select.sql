@@ -1,3 +1,6 @@
+---查询mysql端口
+SHOW GLOBAL VARIABLES LIKE 'port';
+
 ---查询表字段
 SHOW FULL COLUMNS FROM <表名>;
 --查询表字段
@@ -17,8 +20,8 @@ SELECT * FROM <表名> WHERE NOT <表达式>;
 SELECT * FROM <表名> WHERE <字段 <> 值>;
 
 ---相似
-SELECT * FROM <表名> WHERE name LIKE '%<相似字符>';
-SELECT * FROM <表名> WHERE name LIKE '%<相似字符>%';
+SELECT * FROM <表名> WHERE <字段名> LIKE '%<相似字符>';
+SELECT * FROM <表名> WHERE <字段名> LIKE '%<相似字符>%';
 
 ---投影查询
 SELECT <字段1>, <字段2> FROM <表名>;
@@ -85,7 +88,7 @@ SELECT <表名1的别名.字段>, <表名2的别名.字段>
     FROM <表名1> <表名1的别名>
     LEFT OUTER JOIN <表名2> <表名2的别名>
     ON <表达式>;
---FULL OUTER JOIN 会查询到表1和表2为null的数据
+--FULL OUTER JOIN 会查询到表1和表2为null的数据，UNION 也可以实现
 SELECT <表名1的别名.字段>, <表名2的别名.字段>
     FROM <表名1> <表名1的别名>
     FULL OUTER JOIN <表名2> <表名2的别名>

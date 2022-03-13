@@ -7,3 +7,6 @@ INSERT INTO <表名> (<字段1>, <字段2>) VALUES (值1, 值2);
 INSERT INTO <表名> (<字段1>, <字段2>) VALUES
     (值1, 值2),
     (值1, 值2);
+
+--添加表的外键
+ALTER TABLE <子表名> ADD CONSTRAINT <外键名> FOREIGN KEY (<关联字段名>) REFERENCES <主表(主表的字段)>;

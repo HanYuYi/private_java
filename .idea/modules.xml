@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/helloIO/helloIO.iml" filepath="$PROJECT_DIR$/helloIO/helloIO.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloJDBC/helloJDBC.iml" filepath="$PROJECT_DIR$/helloJDBC/helloJDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloJUnit/helloJUnit.iml" filepath="$PROJECT_DIR$/helloJUnit/helloJUnit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/helloLambda/helloLambda.iml" filepath="$PROJECT_DIR$/helloLambda/helloLambda.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloMaven/helloMaven.iml" filepath="$PROJECT_DIR$/helloMaven/helloMaven.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloModuleA/helloModuleA.iml" filepath="$PROJECT_DIR$/helloModuleA/helloModuleA.iml" />
       <module fileurl="file://$PROJECT_DIR$/helloModuleB/helloModuleB.iml" filepath="$PROJECT_DIR$/helloModuleB/helloModuleB.iml" />

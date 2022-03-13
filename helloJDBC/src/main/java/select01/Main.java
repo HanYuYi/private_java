@@ -1,22 +1,48 @@
 package select01;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import connection.ConnectionCus;
 
+import java.sql.*;
+
+/**
+ * JDBC 查询
+ */
 public class Main {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/test";
-    private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "password";
+
+    private static void select(long id, String gender) {
+        java.sql.Connection start = new ConnectionCus().start();
+
+        try {
+            // 建立连接
+                // 查询语句，prepareStatement：防止sql注入攻击
+                try (PreparedStatement statement = start.prepareStatement(
+                        "SELECT id, name, score, class_id FROM students WHERE id = ? AND gender = ?"
+                )) {
+                     statement.setObject(1, id);
+                     statement.setObject(2, gender);
+                     // 查询
+                    try (ResultSet resultSet = statement.executeQuery()) {
+                        System.out.println("---------------------");
+                        while (resultSet.next()) {
+                            System.out.print(resultSet.getLong("id"));
+                            System.out.print(" ");
+                            System.out.print(resultSet.getString("name"));
+                            System.out.print(" ");
+                            System.out.print(resultSet.getInt("score"));
+                            System.out.print(" ");
+                            System.out.print(resultSet.getLong("class_id"));
+                            System.out.println();
+                            System.out.println("---------------------");
+                        }
+                    }
+                }
+            start.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) {
-        try {
-            try(Connection connection = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
-
-            }
-        } catch (SQLException e) {
-            System.out.println("mysql连接异常:" + e);
-        }
-
+        select(13, "F");
     }
 }

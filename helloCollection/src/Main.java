@@ -45,7 +45,7 @@ public class Main {
          *
          * HashSet : 没有实现SortedSet接口，是无序的
          * TreeSet : 实现了SortedSet接口，是有序的，按红黑树排序
-         *  自定义对象必须实现Comparable接口，如果没有，创建TreeSet时必须传入一个Comparator对象
+         * 自定义对象必须实现Comparable接口，如果没有，创建TreeSet时必须传入一个Comparator对象
          * linkedHashSet : 顺序是按照传入的自然顺序
          */
         HashSet<Integer> hashSet = new HashSet<>();
@@ -60,8 +60,8 @@ public class Main {
          * Map : 如果key是自定义对象，一定要覆写equals和hashCode方法
          *
          * HashMap
-         * TreeMap : 实现了SortedSet接口，是有序的。
-         *  自定义对象座位key必须实现Comparable接口，如果没有，创建TreeSet时必须传入一个Comparator对象
+         * TreeMap : 实现了SortedSet接口，是有序的
+         * 自定义对象座位key必须实现Comparable接口，如果没有，创建TreeSet时必须传入一个Comparator对象
          * EnumMap
          * LinkedHashMap
          */
@@ -70,7 +70,6 @@ public class Main {
         hashMap.put("01", hp1);
         hashMap.put("02", new Person("马六", 32));
         System.out.println("-----------HashMap-----------");
-        System.out.println(hashMap.get(new Person("李四", 30)));
         Person targetHp1 = hashMap.get("01");
         System.out.println(targetHp1 == hp1);
         System.out.println(hashMap.containsKey("02"));
