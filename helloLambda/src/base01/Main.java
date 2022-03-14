@@ -1,8 +1,8 @@
 package base01;
 
-import java.lang.reflect.Array;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
-import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -50,9 +50,12 @@ public class Main {
             System.out.println(s);
         }
 
-        /*Map<String, String> stringStringMap = Map.of("1", "a", "2", "b", "3", "c");
-        Stream.of(stringStringMap)
-                .filter(v -> !v.equals("3"))
-                .collect(Collectors.toMap(String a, String b))*/
+        // 用map()把一组String转换为LocalDate
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        Stream<String> stringStream = Stream.of("2022-07-31 09:00:00", "2022-03-14 09:00:00", "2022-09-01 09:00:00");
+        stringStream
+                .map(date -> LocalDateTime.parse(date, dateTimeFormatter))
+                .map(LocalDateTime::toLocalDate)
+                .forEach(System.out::println);
     }
 }
