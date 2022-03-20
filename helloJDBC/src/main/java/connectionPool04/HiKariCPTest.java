@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * JDBC连接池
@@ -46,17 +48,19 @@ public class HiKariCPTest {
         try {
             try (PreparedStatement preparedStatement = hiKariCPConnection.prepareStatement("SELECT * FROM students")) {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
-                    System.out.println("---------------------");
+                    List<Students> dataList = new ArrayList<>();
                     while (resultSet.next()) {
-                        System.out.print(resultSet.getLong("id"));
-                        System.out.print(" ");
-                        System.out.print(resultSet.getString("name"));
-                        System.out.print(" ");
-                        System.out.print(resultSet.getInt("score"));
-                        System.out.print(" ");
-                        System.out.print(resultSet.getLong("class_id"));
-                        System.out.println();
-                        System.out.println("---------------------");
+                        // 将查询到的数据跟javaBean做映射
+                        dataList.add(new Students(
+                                resultSet.getLong("id"),
+                                resultSet.getString("name"),
+                                resultSet.getString("gender"),
+                                resultSet.getInt("score"),
+                                resultSet.getLong("class_id")
+                        ));
+                    }
+                    for (Students s : dataList) {
+                        System.out.println(s);
                     }
                 }
             }
