@@ -11,6 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="custom_mvc" target="1.7" />
       <module name="helloJDBC" target="9" />
       <module name="test" target="1.7" />
       <module name="xmlAndJson" target="8" />
